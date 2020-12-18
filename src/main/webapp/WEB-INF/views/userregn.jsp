@@ -20,7 +20,6 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/styles/userregn-style.css">
 <script src="${pageContext.request.contextPath}/resources/scripts/userregn.js"></script>
-
 </head>
 <body>
    <header>

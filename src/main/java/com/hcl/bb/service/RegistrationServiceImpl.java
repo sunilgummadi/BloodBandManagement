@@ -1,10 +1,13 @@
 package com.hcl.bb.service;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hcl.bb.appexception.ApplicationException;
+import com.hcl.bb.controller.RegistrationController;
 import com.hcl.bb.dao.RegistrationDao;
 import com.hcl.bb.model.User;
 /**
@@ -20,8 +23,11 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Autowired
 	private RegistrationDao registrationDao;
 	
+	private static final Logger logger= LogManager.getLogger(RegistrationServiceImpl.class);
+
 	public boolean validateUser(User user) throws ApplicationException {
 
+		logger.info(user.getUserName()+" entered in to validateUser method of RegistrationServiceImpl class");
 		if (user.getUserName() == "" || user.getPassword() == "" || user.getConfirmPassword() == "") {
 			throw new ApplicationException("All fields are mandatory");
 		} else if (user.getUserName().length() < 6 || user.getUserName().length() > 25) {
@@ -37,6 +43,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 	public boolean isPasswordNotStrong(String password) throws ApplicationException {
 
+		logger.info("User entered in to isPasswordStrong method of RegistrationServiceImpl class");
 		if (password.length() < 8) {
 			return true;
 		} else {
@@ -70,12 +77,14 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Transactional
 	public boolean doesUserExists(User user) throws ApplicationException {
 
+		logger.info(user.getUserName()+" entered in to doesUserExists method of RegistrationServiceImpl class");
 		return registrationDao.doesUserExists(user);
 	}
 
 	@Transactional
 	public boolean addUser(User user) {
 
+		logger.info(user.getUserName()+" entered in to addUser method of RegistrationServiceImpl.class");
 		return registrationDao.addUser(user);
 	}
 

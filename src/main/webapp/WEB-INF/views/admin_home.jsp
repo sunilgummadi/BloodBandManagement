@@ -22,6 +22,7 @@
 	href="${pageContext.request.contextPath}/resources/styles/admin_home-style.css">
 <script
 	src="${pageContext.request.contextPath}/resources/scripts/admin_action.js"></script>
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
 </head>
 <body>
 	<header>
@@ -58,7 +59,12 @@
 						<td class="value">${element.contactName}</td>
 						<td class="value">${element.contactNumber}</td>
 						<td class="value">${element.when}</td>
-						<td class="value">${element.requestStatus}</td>
+						<c:if test="${element.requestStatus=='Approved'}">
+						  <td class="value" style="color:ForestGreen;font-weight:bold">${element.requestStatus}</td>
+						</c:if>
+						<c:if test="${element.requestStatus=='Rejected'}">
+						  <td class="value" style="color:crimson;font-weight:bold">${element.requestStatus}</td>
+						</c:if>
 						<c:if test="${element.requestStatus=='Approval Pending'}">
 							<td class="value">
 								<form action="approveRequest/${element.patientId}">

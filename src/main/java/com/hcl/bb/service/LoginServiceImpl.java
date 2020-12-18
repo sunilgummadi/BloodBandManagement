@@ -1,5 +1,7 @@
 package com.hcl.bb.service;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,9 +22,12 @@ public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private LoginDao loginDao;
 	
-	
+	private static final Logger logger= LogManager.getLogger(LoginServiceImpl.class);
+
 	public boolean validateUserLogin(User user) throws ApplicationException {
 	  
+		logger.info(user.getUserName()+" entered in to validateUserLogin method of LoginServiceImpl class");
+		
 		if(user.getUserName()==""||user.getPassword()=="")
 		{
 			throw new ApplicationException("All fields are mandatory");
@@ -41,6 +46,7 @@ public class LoginServiceImpl implements LoginService {
 	@Transactional
 	public User validateUser(User user) throws ApplicationException {
 		
+		logger.info(user.getUserName()+" entered in to validateUser method of LoginServiceImpl class");
 		return loginDao.validateUser(user);
 	}
 

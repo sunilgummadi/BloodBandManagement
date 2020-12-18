@@ -12,8 +12,7 @@
 	href="${pageContext.request.contextPath}/resources/styles/home-style.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/styles/home-style.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/styles/home-style.css">
 <style>
 body {
 	background-image: url('resources/images/bloodbank2.jpg');
@@ -22,6 +21,7 @@ body {
 	background-size: 100% 100%;
 }
 </style>
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
 </head>
 <body>
 	<section>

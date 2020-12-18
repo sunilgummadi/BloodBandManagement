@@ -22,6 +22,7 @@
 	href="${pageContext.request.contextPath}/resources/styles/donate_blood.css">
 <script
 	src="${pageContext.request.contextPath}/resources/scripts/donate_blood.js"></script> 
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
 </head>
 <body>
 	<header>

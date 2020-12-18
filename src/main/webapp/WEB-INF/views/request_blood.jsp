@@ -20,6 +20,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/styles/request_blood.css">
 <script src="${pageContext.request.contextPath}/resources/scripts/request_blood.js"></script>
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
 </head>
 <body>
 	<header>

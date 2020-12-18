@@ -22,6 +22,7 @@
 	href="${pageContext.request.contextPath}/resources/styles/admin_home-style.css">
 <script
 	src="${pageContext.request.contextPath}/resources/scripts/admin_action.js"></script>
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
 </head>
 <body>
 	<header>
@@ -54,7 +55,12 @@
 						<td class="value">${element.city}</td>
 						<td class="value">${element.glucoseLevel}</td>
 						<td class="value">${element.time}</td>
-						<td class="value">${element.donationStatus}</td>
+						<c:if test="${element.donationStatus=='Approved'}">
+						  <td class="value" style="color:ForestGreen;font-weight:bold">${element.donationStatus}</td>
+						</c:if>
+						<c:if test="${element.donationStatus=='Rejected'}">
+						  <td class="value" style="color:crimson;font-weight:bold">${element.donationStatus}</td>
+						</c:if>
 						<c:if test="${element.donationStatus=='Approval Pending'}">
 							<td class="value">
 								<form action="approveDonar/${element.patientId}">

@@ -19,6 +19,8 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/styles/request_status-style.css">
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
+
 </head>
 <body>
 	<header>
@@ -50,7 +52,13 @@
 						<td class="value">${element.doctorName}</td>
 						<td class="value">${element.hospitalAddress}</td>
 						<td class="value">${element.when}</td>
-						<td class="value">${element.requestStatus}</td>
+						<c:if test="${element.requestStatus=='Approved'}">
+						  <td class="value" style="color:ForestGreen;font-weight:bold">${element.requestStatus}</td>
+						</c:if>
+						<c:if test="${element.requestStatus=='Rejected'}">
+						  <td class="value" style="color:crimson;font-weight:bold">${element.requestStatus}</td>
+						</c:if>
+						
 					  </tr>
 					</c:forEach>
 

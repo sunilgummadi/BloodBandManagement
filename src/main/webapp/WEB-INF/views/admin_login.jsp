@@ -20,6 +20,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/styles/admin_login-style.css">
 <script src="${pageContext.request.contextPath}/resources/scripts/admin_login.js"></script>
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
 </head>
 <body>
    <header>

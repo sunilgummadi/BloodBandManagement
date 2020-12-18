@@ -19,6 +19,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/styles/donation_status-style.css">
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
 </head>
 <body>
 	<header>
@@ -48,7 +49,12 @@
 						<td class="value">${element.city}</td>
 						<td class="value">${element.glucoseLevel}</td>
 						<td class="value">${element.time}</td>
-						<td class="value">${element.donationStatus}</td>
+						<c:if test="${element.donationStatus=='Approved'}">
+						  <td class="value" style="color:ForestGreen;font-weight:bold">${element.donationStatus}</td>
+						</c:if>
+						<c:if test="${element.donationStatus=='Rejected'}">
+						  <td class="value" style="color:crimson;font-weight:bold">${element.donationStatus}</td>
+						</c:if>
 					</tr>
 					</c:forEach>
 

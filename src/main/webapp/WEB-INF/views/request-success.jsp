@@ -14,6 +14,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/styles/success-style.css">
+<script src="${pageContext.request.contextPath}/resources/scripts/prevent_back.js"></script>
+
 </head>
 <body>
 
